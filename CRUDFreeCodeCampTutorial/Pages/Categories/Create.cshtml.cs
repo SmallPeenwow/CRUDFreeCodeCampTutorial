@@ -26,7 +26,8 @@ namespace CRUDFreeCodeCampTutorial.Pages.Categories
         {
             if (Category.Name == Category.DisplayOrder.ToString())
             {
-                ModelState.AddModelError(string.Empty, "The Display Order cannot exactly match the Name.");
+                // Binds to property that matches key name
+                ModelState.AddModelError("Category.Name", "The Display Order cannot exactly match the Name.");
             }
 
             if (ModelState.IsValid)
